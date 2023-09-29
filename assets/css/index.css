@@ -1,0 +1,238 @@
+html,
+body {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+#intro {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, #502a09 0%, #3d2a05 35%, #372905 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.moon {
+  max-width: 680px;
+  max-height: 680px;
+  margin-top: 20px;
+  z-index: 1;
+  filter: hue-rotate(2deg) drop-shadow(8px 8px 120px rgb(255, 238, 0));
+}
+
+.autumn_star {
+  position: absolute;
+  top: 20%;
+  left: 25% !important;
+  z-index: 0;
+}
+
+.cloud {
+  max-width: 120px;
+  margin-top: 20px;
+  z-index: 1;
+  position: absolute;
+  filter: drop-shadow(8px 8px 30px rgb(255, 238, 0));
+}
+
+.cloud:nth-child(2) {
+  max-width: 200px;
+  max-height: 200px;
+  margin-top: 20px;
+  left: 50% !important;
+  z-index: 2;
+}
+
+.cloud:nth-child(3) {
+  max-width: 80px;
+  top: 10% !important;
+  left: 50% !important;
+  z-index: 2;
+  filter: hue-rotate(90deg) drop-shadow(8px 8px 30px rgb(255, 238, 0));
+}
+
+.cloud:nth-child(4) {
+  max-width: 180px;
+  top: 20% !important;
+  left: 30% !important;
+  z-index: 2;
+  filter: hue-rotate(30deg) drop-shadow(8px 8px 30px rgb(255, 238, 0));
+}
+
+.cloud:nth-child(5) {
+  max-width: 180px;
+  top: 10% !important;
+  left: 10% !important;
+  z-index: 2;
+  filter: hue-rotate(120deg) drop-shadow(1px 1px 120px rgb(255, 238, 0));
+}
+
+.mid_text {
+  font-family: "Poppins-Medium";
+  font-size: 30px;
+  display: block;
+  margin: 0 auto;
+  color: rgb(243, 243, 243);
+  text-align: center;
+  position: unset !important;
+  z-index: 10;
+  text-shadow: 10px 20px 10px rgba(0, 0, 0, 0.494);
+}
+
+/** Light **/
+.autumn_light {
+  position: absolute;
+  top: -20px;
+  left: 20%;
+  filter: hue-rotate(10deg) drop-shadow(8px 8px 80px rgb(255, 128, 0));
+  pointer-events: none;
+}
+
+.autumn_lantern {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 60%;
+}
+
+.autumn_lantern > img {
+  max-width: 20px;
+  margin-left: 10%;
+  filter: drop-shadow(8px 8px 20px rgb(255, 128, 0));
+}
+
+.autumn_lantern > img:nth-child(1) {
+  max-width: 30px;
+  margin-left: 20%;
+  margin-top: 30px;
+}
+
+.autumn_lantern > img:nth-child(2) {
+  max-width: 30px;
+  margin-left: 30%;
+  margin-top: 60px;
+}
+
+/** Bottom of view **/
+.autumn_ground {
+  width: 100%;
+  height: 120px;
+  position: absolute;
+  background-color: #372905;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.autumn_bottom {
+  position: absolute;
+  bottom: -80px;
+  right: -100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.autumn_bottom > img {
+  filter: hue-rotate(90deg);
+  pointer-events: none;
+}
+
+.autumn_rabit {
+  max-width: 80px;
+  position: absolute;
+  bottom: 60px;
+  left: 20%;
+  z-index: 2;
+  filter: drop-shadow(50px -10px 30px rgb(255, 238, 0));
+  pointer-events: none;
+}
+
+.autumn_rabit:nth-child(2) {
+  transform: rotateY(180deg);
+  left: 30%;
+}
+
+.autumn_house {
+  max-width: 180px;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  z-index: 1;
+  filter: hue-rotate(3deg) drop-shadow(8px 8px 20px rgba(255, 234, 3, 0.277));
+  pointer-events: none;
+}
+
+.autumn_play_btn {
+  width: max-content;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 20px;
+  font-family: monospace;
+  border: 1px solid white;
+  box-shadow: 1px 1px 10px black;
+
+  position: absolute;
+  top: 20% !important;
+  left: 50% !important;
+  right: 50% !important;
+  cursor: pointer;
+}
+
+.autumn_sister_hang {
+  max-width: 120px;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  filter: hue-rotate(30deg) drop-shadow(10px 1px 6px rgb(225, 255, 0));
+  pointer-events: none;
+}
+
+.autumn_sister_hang_clound {
+  max-width: 120px;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  filter: hue-rotate(120deg) drop-shadow(10px 1px 6px rgb(255, 94, 0));
+  pointer-events: none;
+}
+
+/** Responsive **/
+@media screen and (max-width: 425px) {
+  .moon {
+    max-width: 220px;
+  }
+  .autumn_light {
+    max-width: 625px;
+  }
+
+  .autumn_play_btn {
+    top: 43% !important;
+  }
+
+  .autumn_sister_hang {
+    top: 48%;
+  }
+
+  .autumn_sister_hang_clound {
+    top: 60%;
+  }
+
+  /** bottom **/
+  .autumn_bottom {
+    bottom: -30px;
+    right: -80px;
+  }
+
+  .autumn_bottom > img {
+    max-width: 280px;
+  }
+
+  .autumn_house {
+    max-width: 180px;
+    left: 10%;
+    bottom: 120px;
+  }
+}
