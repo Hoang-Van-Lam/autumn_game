@@ -10,34 +10,33 @@ class Intro extends Phaser.Scene {
   }
 
   preload() {
-    // this.load.setBaseURL("https://labs.phaser.io");
     this.load.image("moon", "assets/img/moon.png");
     this.load.image("ground", "assets/img/cay/grass.png");
     this.load.image("cake", "assets/img/banh/banh1.png");
     this.load.image("bomb", "assets/img/bombcolor.png");
     this.load.spritesheet("rabit", "assets/img/tho/tho_anim_test.png", {
-      frameWidth: 51.6,
+      frameWidth: 51.5,
       frameHeight: 43,
     });
+
+    this.load.image("tree", "assets/img/cay/tree.png");
 
     this.load.audio("bgMusic", "assets/audio/lampug_bg_game.mp3");
   }
 
   create() {
-    let sfx = this.sound.add('bgMusic');
-    sfx.play();
-
+    // let sfx = this.sound.add('bgMusic');
+    // sfx.play();
     this.cursors = this.input.keyboard.createCursorKeys();
 
     const graphics = this.add.graphics();
-    graphics.fillGradientStyle(0x502a09, 0x3d2a05, 0x3d2a05, 0x372905, 45);
+    // graphics.fillGradientStyle(0x502a09, 0x3d2a05, 0x3d2a05, 0x372905, 45);
+    graphics.fillGradientStyle(0x2d2f35, 0x2d2f35, 0x2d2f35, 0x2d2f35, 45);
     graphics.fillRect(0, 0, this.scale.width, this.scale.height);
 
     const graphGround = this.add.graphics();
-    graphGround.fillGradientStyle(0xff000f, 0xff000f, 0xff000f, 0x372905, 45);
-    graphGround.fillRect(0, 900, this.scale.width, 30);
-
-    this.add.image(120, 120, "moon").setOrigin(-2, 0.5).setScale(0.5);
+    graphGround.fillGradientStyle(0x9e9c8d, 0x9e9c8d, 0x9e9c8d, 0x9e9c8d, 45);
+    graphGround.fillRect(0, 800, this.scale.width, 30);
 
     const platforms = this.physics.add.staticGroup();
     platforms.create(400, 990, "ground").setScale(2).refreshBody();
@@ -80,6 +79,7 @@ class Intro extends Phaser.Scene {
       player.anims.play("turn");
       gameOver = true;
       score = 0;
+      // sfx.stop();
       const restart = setTimeout(() => {
         this.scene.start();
         clearTimeout(restart);
@@ -133,6 +133,13 @@ class Intro extends Phaser.Scene {
       frameRate: 10,
       repeat: -1,
     });
+
+    // img
+    this.add.image(120, 120, "moon").setOrigin(-2, 0.5).setScale(0.5);
+    this.add.image(0, 800, "tree").setOrigin(-2, 0.5);
+    this.add.image(0, 800, "tree").setOrigin(-1, 1);
+    this.add.image(0, 800, "tree").setOrigin(-2, 1);
+
   }
 
   update() {
